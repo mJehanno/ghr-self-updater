@@ -99,7 +99,7 @@ func (u *Updater) CheckLatest() (bool, error) {
 
 	u.assets = rel.Assets
 
-	return latest.EQ(u.Current), nil
+	return latest.LTE(u.Current), nil
 }
 
 func (u *Updater) getAsset() (*github.ReleaseAsset, error) {
